@@ -1,31 +1,79 @@
+<!-- Cyber News Blog: Final Version with All Add-ons + 20 Markdown Posts -->
+<!-- Save this as index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyber News Blog</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber News Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-gray-900 text-white font-sans transitions-all duration-500">
+<body class="bg-gray-900 text-white font-sans transition-all duration-500">
 
-  
-    <header class="p-6 bg-gradient-to-r from-cyan-500 to blue-700 shadown-md">
-       <h1 class="text-3xl font-bold animate-pulse">🧠 Cyber News Blog</h1>
-       <p class="text-sm text-grey-100 mt-1">Real-time updates from the digital frontylines</p>
+  <!-- Header -->
+  <header class="p-6 bg-gradient-to-r from-cyan-500 to-blue-700 shadow-md relative">
+    <h1 class="text-3xl font-bold animate-pulse">🧠 Cyber News Blog</h1>
+    <p class="text-sm text-gray-100 mt-1">Real-time updates from the digital frontlines</p>
+    <button id="theme-toggle" class="absolute top-4 right-4 p-2 text-white bg-gray-700 rounded">🌗 Toggle Theme</button>
+  </header>
 
-    </header>
+  <!-- Search + Selector -->
+  <section class="p-4">
+    <input type="text" id="searchInput" class="p-2 mb-4 rounded-md w-full md:w-1/2" placeholder="Search post titles...">
+    <label for="postSelector" class="text-sm block mb-2 text-gray-300">📰 Choose a Blog Post:</label>
+    <select id="postSelector" class="bg-gray-800 text-white p-2 rounded-md w-full md:w-1/2"></select>
+  </section>
 
+  <!-- Blog container -->
+  <main class="p-6" id="blog-container"></main>
+  <div id="stats" class="text-xs text-gray-400 mt-4 text-center"></div>
 
-    <main class="p-6" id="blog-container">
-        <!-- Markdown content will loaded here -->
-    </main>
+  <!-- Markdown Live Editor -->
+  <section class="p-6">
+    <textarea id="markdownInput" class="w-full h-40 p-2 mt-6 text-sm" placeholder="Write Markdown here..."></textarea>
+    <button onclick="previewMarkdown()" class="mt-2 bg-blue-600 p-2 rounded">Preview</button>
+    <div id="previewArea" class="prose bg-white text-black p-4 rounded mt-2"></div>
+  </section>
 
+  <!-- Markdown File Upload -->
+  <section class="p-6">
+    <input type="file" id="uploadMd" accept=".md" class="my-4" />
+  </section>
 
-    <footer class="p-4 text-center text-xs text-gray-400 border-t border-gray-700">
-    © 2025 Voidcodes-ux • Built with HTML, JS, Markdown
+  <!-- Older Posts -->
+  <section class="p-6 border-t border-gray-700 mt-8">
+    <h2 class="text-xl font-bold mb-4 text-gray-200">🕰️ Older Posts</h2>
+    <ul class="space-y-2 text-sm text-gray-400">
+      <li><span class="text-gray-500">2024-11-01</span> – <em>Supply Chain Backdoor</em></li>
+      <li><span class="text-gray-500">2025-01-13</span> – <em>AI-Generated Phishing</em></li>
+      <li><span class="text-gray-500">2024-06-22</span> – <em>Cloud Misconfiguration</em></li>
+      <li><span class="text-gray-500">2022-06-21</span> – <em>Critical Zero-Day in VPN</em></li>
+      <li><span class="text-gray-500">2022-05-28</span> – <em>Phishing-as-a-Service</em></li>
+      <li><span class="text-gray-500">2024-04-01</span> – <em>IoT Botnet Expansion</em></li>
+      <li><span class="text-gray-500">2021-08-19</span> – <em>Ransomware Hits MSP</em></li>
+      <li><span class="text-gray-500">2020-08-14</span> – <em>Cloudflare DNS Leak</em></li>
+      <li><span class="text-gray-500">2022-03-15</span> – <em>GitHub Token Exposure</em></li>
+      <li><span class="text-gray-500">2022-02-12</span> – <em>Critical Patch Bypass</em></li>
+      <li><span class="text-gray-500">2020-07-06</span> – <em>OAuth Abuse</em></li>
+      <li><span class="text-gray-500">2025-07-31</span> – <em>Insider Threat in Fintech</em></li>
+      <li><span class="text-gray-500">2025-05-29</span> – <em>Deepfake CEO Attack</em></li>
+      <li><span class="text-gray-500">2024-09-01</span> – <em>XDR System Compromise</em></li>
+      <li><span class="text-gray-500">2024-01-28</span> – <em>Privilege Escalation in Linux</em></li>
+      <li><span class="text-gray-500">2022-10-22</span> – <em>IAM Role Misuse</em></li>
+      <li><span class="text-gray-500">2022-06-01</span> – <em>Dark Web Credential Dump</em></li>
+      <li><span class="text-gray-500">2020-08-12</span> – <em>Firewall Bypass Toolkit</em></li>
+      <li><span class="text-gray-500">2022-07-28</span> – <em>APT29 Mimicry Attack</em></li>
+      <li><span class="text-gray-500">2021-12-11</span> – <em>Secure Boot Chain Attack</em></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="p-4 text-center text-xs text-gray-400 border-t border-gray-700">
+    © 2025 Voidcodes-ux • Built with HTML, JS, Markdown, Tailwind
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

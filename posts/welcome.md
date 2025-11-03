@@ -1,12 +1,3 @@
-﻿## Welcome to Cyber News Blog
-# Hack the Planet 🌐
+﻿# Welcome to Cyber News Blog
 
-The cyber threat landscape is evolving rapidly. Nation-state actors, zero-day exploits, and AI-powered phishing attacks...
-
-## 🔐 Recent Topics
-- Ransomware as a service
-- MFA bypass techniques
-- OWASP Top 10 (2025 updates)
-
-Stay patched, stay alert.
-
+Explore the latest in cybersecurity from both red and blue teams. Stay updated with tools, threats, and real-time news.
